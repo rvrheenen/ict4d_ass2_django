@@ -9,6 +9,8 @@ urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     # ex: /polls/random
     path('random', views.random_detail, name='random'),
+    # ex: /polls/overview
+    path('overview', views.OverviewView.as_view(), name='overview'),
     # ex: /polls/5/
     path('<int:pk>/', views.DetailView.as_view(), name='detail'),
     # ex: /polls/5/results/

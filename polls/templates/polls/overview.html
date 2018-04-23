@@ -1,0 +1,24 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
+{% if latest_question_list %}
+    <p>
+        There are {{ latest_question_list|length }} questions in the system:
+    <table>
+    {% for question in latest_question_list %}
+        <tr>
+            <td>
+                <a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></td>
+            <td>
+                {% for choice in question.choice_set.all%}
+                {{choice.votes}}: {{choice.choice_text}}<br>
+                {% endfor %}
+                <br>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
