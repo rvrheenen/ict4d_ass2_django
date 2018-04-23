@@ -7,3 +7,4 @@
 </ul>
 
 <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+<input type="button" onclick="location.href='{% url 'polls:random' %}';" value="Random question" />

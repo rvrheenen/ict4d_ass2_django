@@ -5,6 +5,8 @@ from django.template import loader
 from django.views import generic
 from django.utils import timezone
 
+import random
+
 from .models import Choice, Question
 
 class IndexView(generic.ListView):
@@ -51,3 +53,10 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+
+def random_detail(request):
+    questions = Question.objects.all()
+    if len(questions) > 0:
+        return HttpResponseRedirect(reverse('polls:detail', args=(random.randint(1, len(questions) ),)))
+    else:
+        return HttpResponseRedirect(reverse('polls:index'))
