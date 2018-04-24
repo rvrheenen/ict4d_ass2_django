@@ -8,11 +8,10 @@ from django.apps import apps
 
 import random
 
-from .models import Choice, Question
+from .models import Choice, Question, QuestionCategory
 
 class HomeView(generic.TemplateView):
     template_name = "polls/home.html"
-    print(apps.get_models())
     context = {"apps": apps.get_models()}
 
 class IndexView(generic.ListView):
@@ -52,7 +51,7 @@ class ResultsView(generic.DetailView):
 
 class QuestionEditView(generic.UpdateView):
     model = Question
-    fields = ["question_text"]
+    fields = ["question_text", "category"]
     template_name = "polls/edit.html"
 
 def vote(request, question_id):

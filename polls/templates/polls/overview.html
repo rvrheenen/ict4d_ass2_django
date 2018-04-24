@@ -5,12 +5,17 @@
 {% if latest_question_list %}
     <p>
         There are {{ latest_question_list|length }} questions in the system:
-    <table>
+    <table class="overview_table">
+        <tr>
+            <td>Category</td>
+            <td>Question</td>
+            <td>Choices</td>
     {% for question in latest_question_list %}
         <tr>
+            <td>{{ question.category }}</td>
             <td>
                 <a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a>
-                <a href="{% url 'polls:edit' question.id %}">edit</a>
+                <a class="edit" href="{% url 'polls:edit' question.id %}">edit</a>
             </td>
             <td>
                 {% for choice in question.choice_set.all%}

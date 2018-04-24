@@ -3,6 +3,32 @@ body {
     padding:30px;
 }
 
-li a {
-    color: red;
+a { /* unvisited link */
+    color:purple;
+    text-decoration: none;
+}
+a:visited { /* visited link */
+    color:purple;
+    text-decoration: none;
+}
+a:hover { /* mouse over link */
+    color:pink;
+    text-decoration: none;
+    }
+a:active { /* selected link */
+    color:purple;
+    text-decoration: none;
+}
+
+.edit, .edit:visited {
+    color:blue;
+    text-decoration: underline;
+}
+.edit:hover {
+    color:lightgreen;
+    text-decoration: underline;
+}
+
+table.overview_table tr td {
+    padding:5px;
 }

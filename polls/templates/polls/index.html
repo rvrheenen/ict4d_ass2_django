@@ -3,6 +3,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 
 {% if latest_question_list %}
+    <h1>Questions:</h1>
     <ul>
         <li>
             <input type="button" onclick="location.href='{% url 'polls:random' %}';" value="Random question" />

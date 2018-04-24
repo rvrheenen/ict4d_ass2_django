@@ -4,9 +4,18 @@ from django.db import models
 from django.utils import timezone
 from django.urls import reverse
 
-# Create your models here.
+class QuestionCategory(models.Model):
+    category_name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.category_name
+
+    class Meta:
+        verbose_name_plural = "Question categories"
+
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
+    category = models.ForeignKey(QuestionCategory, on_delete=models.SET_NULL, null=True)
     pub_date = models.DateTimeField('date published')
 
     def __str__(self):
