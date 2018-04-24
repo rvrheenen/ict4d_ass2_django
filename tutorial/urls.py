@@ -23,5 +23,6 @@ admin.site.site_header = "Polls Administration"
 urlpatterns = [
     path('', views.HomeView.as_view(), name="home"),
     path('polls/', include('polls.urls')),
-    path('admin/', admin.site.urls)
+    path('admin/doc/', include('django.contrib.admindocs.urls')),
+    path('admin/', admin.site.urls),
 ]
