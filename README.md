@@ -1,5 +1,4 @@
-# ict4d_ass2_django
-VU ICT4D Assignment 2 - Django
-
-To setup a test database with an admin [user:password]: admin:adminadmin and some test data in the polls run:
-./build_test_db.sh
+# VU ICT4D Group 4 Assignment 2
+### Description
+Here the second assignment of the ICT4D course may be found.
+The Midterm assignment, which was following the Django Tutorial and adding some expansions, is in [django_tutorial](https://github.com/rvrheenen/ict4d_ass2_django/tree/master/django_tutorial).
