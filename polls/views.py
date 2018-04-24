@@ -4,10 +4,16 @@ from django.urls import reverse
 from django.template import loader
 from django.views import generic
 from django.utils import timezone
+from django.apps import apps
 
 import random
 
 from .models import Choice, Question
+
+class HomeView(generic.TemplateView):
+    template_name = "polls/home.html"
+    print(apps.get_models())
+    context = {"apps": apps.get_models()}
 
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'

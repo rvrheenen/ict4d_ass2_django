@@ -11,6 +11,9 @@
         <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
     {% endfor %}
     </ul>
+    <p>
+        <a href="{% url 'polls:overview' %}">Overview</a>
+    </p>
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
