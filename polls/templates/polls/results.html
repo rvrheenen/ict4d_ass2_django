@@ -10,6 +10,6 @@
 {% endfor %}
 </ul>
 
-<a href="{% url 'polls:detail' question.id %}">Vote again?</a> ||
-<a href="{% url 'polls:index' %}">Back to list!</a>
+<input type="button" onclick="location.href='{% url 'polls:detail' question.id %}';" value="Vote again!" /><br />
 <input type="button" onclick="location.href='{% url 'polls:random' %}';" value="Random question" />
+<input type="button" onclick="location.href='{% url 'polls:index' %}';" value="Back to list!" />

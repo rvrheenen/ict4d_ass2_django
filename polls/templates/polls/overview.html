@@ -3,8 +3,9 @@
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 
 {% if latest_question_list %}
-    <p>
+    <h3>
         There are {{ latest_question_list|length }} questions in the system:
+    </h3>
     <table class="overview_table">
         <tr>
             <td>Category</td>
@@ -26,6 +27,7 @@
         </tr>
     {% endfor %}
 </table>
+<input type="button" onclick="location.href='{% url 'polls:index' %}';" value="Back to list!" />
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
